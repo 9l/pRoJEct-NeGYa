@@ -7,7 +7,7 @@
 
 A customizable Jekyll theme for notes, blogs, portfolios, and CV-style personal sites.
 
-Demo: [View Demo](https://akiritsu.github.io/pRoJEct-VeXEd/)
+Demo: [View Demo](https://gmkzwwg.github.io/pRoJEct-VeXEd/)
 
 ## Features
 

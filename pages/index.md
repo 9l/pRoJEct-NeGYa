@@ -14,13 +14,16 @@ permalink: /
 
 # PROJECT VeXEd - HACKER-STYLE PERSONAL HOMEPAGE
 
-<br>
-> pRoJEct-NeGYa is a hacker-like, highly-customizable theme for note-keeping, personal-website or CV.
+A customizable Jekyll theme for notes, blogs, portfolios, and CV-style personal sites.
 
 ## Features
 
-- Highly customizable with user-friendly hacker-like design.
-- Easy to gather your notes or portfolios with multiple collection design.
+[MARKDOWN TEST PAGE IS HERE]({{site.url}}{{site.baseurl}}/test.html)
+
+- A hacker-inspired, highly customizable Jekyll theme for notes, portfolios, and personal sites.
+- Organize articles with Jekyll collections, so different types of content can be managed without extra recoding.
+- Include encrypted text support for protected content display.
+- Provide bilingual switching for multilingual writing and reading.
 - Supports formula insertion with `MathJax`.
 
 $$
@@ -49,10 +52,6 @@ for i in range(n):
 ## Download and Documentation
 
 [**pRoJEct VeXEd README (Github)**](https://github.com/akiritsu/pRoJEct-VeXEd)
-
-[Download ZIP files](https://codeload.github.com/akiritsu/pRoJEct-VeXEd/zip/master)
-
-[中文自述及使用教程](https://akiritsu.github.io/pRoJEct-VeXEd/readme-zhcn/)
 
 ## More Samples
 

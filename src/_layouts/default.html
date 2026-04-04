@@ -2,11 +2,16 @@
 <html>
   {% include head.html %}
   <body class="page">
+<!-- Hacked Splash -->
+    {% include hacked_splash.html %}
+    <script src="{{ '/src/assets/js/hacked-splash.js' | relative_url }}" defer></script>
+    <!-- Main -->
     {% include background.html %}
     {% include collection_list.html %}
     <div class="container" id="ctner">
        {% include header.html %}
       <div class="div_article" id="div_atcl">
+        <div class="hook" id="top_hook"></div>
         <article
           id="main_atcl"
           itemscope
@@ -18,5 +23,4 @@
       </div>
     </div>
   </body>
-  <script async src="{{site.url}}{{site.baseurl}}/src/assets/js/init-mermaid.js"></script>
 </html>

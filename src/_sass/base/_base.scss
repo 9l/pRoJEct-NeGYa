@@ -1,49 +1,98 @@
 // global base reset
 body {
-  line-height: 1.75;
+  line-height: 1.70;
   font-size: $font-size-primary;
   color: $color-primary;
-  font-family: $font-serif;
+  font-family: $font-monospace;
+  cursor: $cursor-green-auto;
 }
 h1 {
   font-size: $font-size-h1;
   text-align: center !important;
-  font-weight: lighter;
-  margin: 1.8em 0 1.5em 0;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin: 1.6em 0 1.5em 0;
+  cursor: $cursor-green-text;
+}
+h2::before {
+  content: "[root]# ";  /* Add the desired symbol here */
+  font-size: $font-size-h2;
+  font-weight: normal;
+  text-transform: lowercase;
+  color: $color-primary;  /* Optional: Set the color of the symbol */
 }
 h2 {
+  background: $color-third;
+  color: $color-post-background;
   font-size: $font-size-h2;
-  font-weight: lighter;
-  margin: 1.8em 0 0.8em 0;
-  border-bottom: $thin-border;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 1.6em 0 0.8em 0;
+  cursor: $cursor-green-text;
+  strong {
+    color: $color-primary !important;
+  }
+}
+h3::before {
+  content: "> ";  /* Add the desired symbol here */
+  font-size: $font-size-h3;
+  color: $color-third;  /* Optional: Set the color of the symbol */
 }
 h3 {
+  color: $color-third;
   font-size: $font-size-h3;
   font-weight: lighter;
-  margin: 1.9em 0 0.8em 0;
+  // text-transform: capitalize;
+  margin: 1.6em 0 0.8em 0;
+  // border-bottom: $border-dotted-third;
+  cursor: $cursor-green-text;
+}
+h4::before {
+  content: "# ";  /* Add the desired symbol here */
+  font-size: $font-size-h4;
+  color: $color-third;  /* Optional: Set the color of the symbol */
 }
 h4 {
+  color: $color-third;
   font-size: $font-size-h4;
   font-weight: lighter;
-  margin: 1.4em 0 0.8em 0;
+  margin: 1.2em 0 0.8em 0;
+  cursor: $cursor-green-text;
+  list-style-type: decimal;
+}
+h5::before {
+  content: "## ";  /* Add the desired symbol here */
+  font-size: $font-size-h5;
+  color: $color-third;  /* Optional: Set the color of the symbol */
 }
 h5 {
+  color: $color-third;
   font-size: $font-size-h5;
   font-weight: lighter;
-  margin: 2.3em 0 0.6em 0;
+  margin: 1.2em 0 0.6em 0;
+  cursor: $cursor-green-text;
+}
+h6::before {
+  content: "### ";  /* Add the desired symbol here */
+  font-size: $font-size-h6;
+  color: $color-third;  /* Optional: Set the color of the symbol */
 }
 h6 {
+  color: $color-third;
   font-size: $font-size-h6;
   font-weight: lighter;
-  margin: 2.4em 0 0.6em 0;
+  margin: 1.6em 0 0.6em 0;
+  cursor: $cursor-green-text;
 }
 p {
   margin: $global-section-margin 0px;
   display: block;
+  cursor: $cursor-green-text;
 }
 strong {
-  color: mix($color-primary, rgba(#ddd, 1));
-  -webkit-text-stroke: 0.5px $color-primary;
+  font-weight: bold;
+  color: $article-bold;
+  // -webkit-text-stroke: 0.5px $color-primary;
   // text-shadow: 0.35px 0.35px 0 $color-primary;
 }
 hr {
@@ -62,100 +111,115 @@ video {
 textarea {
   margin: 0;
   padding: 0;
-  border: $thin-border;
-  background-color: rgba($color-postbg, 0.7);
+  border: $border-thin;
+  background-color: rgba($color-post-background, 0.7);
   color: $color-warning;
   font-size: 15px;
 }
 button {
-  border: $medium-border;
-  background-color: rgba($color-postbg, 0.7);
+  border: $border-normal;
+  background-color: rgba($color-post-background, 0.7);
   color: $color-primary;
+  cursor: $cursor-green-pointer;
 }
 // links
 a {
+  font-size: 100%;
   color: $color-primary;
-  text-decoration: underline dotted rgba($color-primary, 0.4);
+  text-decoration: none;
+  //text-decoration: underline solid $article-link;
 }
 a:hover {
-  color: $color-secondary;
+  font-size: 100%;
+  color: $color-link-hover;
+  font-weight: auto;
   text-decoration: none;
-  cursor: pointer;
+  cursor: $cursor-green-pointer !important;
+  @include text_blink;
 }
 img {
-  max-width: 95%;
+  width: auto;
+  max-width: 96%;
+  height: auto;
+  max-height: auto;
   margin: 0 auto; // image center align
   display: block; // image center align
-  background-color: whitesmoke;
+  background-color: auto;
 }
 ol {
-  padding: 0 0 0 1.42em;
-  margin: $global-section-margin 12px 12px 0px;
+  padding: 0 0 0 2em;
+  margin: $global-section-margin 0.2em 0.2em 0px;
   display: block;
   list-style-type: decimal;
+  cursor: $cursor-green-text;
 }
 ul {
-  padding: 0 0 0 1.2em;
-  margin: $global-section-margin 12px 12px 0px;
+  padding: 0 0 0 1.25em;
+  margin: $global-section-margin 0.2em 0.2em 0px;
   list-style: disc;
+  cursor: $cursor-green-text;
+}
+dl { // Description List: 描述列表容器。它定义了整个列表的范围
+  color: auto;
+}
+dfn { // Definition Element: 表示术语的定义实例。通常嵌套在 <dt> 或段落中
+  font-style: italic;
+}
+dt { // Description Term: 描述术语。代表列表中的项目名称（Key/Term）
+  color: $color-primary;
+  font-weight: 700;
+}
+dd { // Description Details: 描述详情。代表对前一个术语的具体说明或数值（Value/Definition）。
+  color: $color-third;
 }
 blockquote {
-  margin: $global-section-margin 0em 0.55em 0em;
+  background-color: $color-post-background;
+  margin: $global-section-margin 0em 0.45em 0em;
   font-size: $font-smaller;
-  font-style: none;
   line-height: 1.5;
-  color: $color-blockquote;
+  color: $article-blockquote;
+  padding: 0 0.23em 0 0.5em;
+  border: $border-dotted-blockquote;
+  cursor: $cursor-green-text;
+//  border-left: 2.5px solid $article-blockquote;
 }
 // footnote mark
 sup a{
   font-size: 105%;
-  color: $color-secondary;
+  color: $article-blockquote;
   text-decoration: none !important;
 }
 // code highlight
 pre {
-  border: $thin-border;
-  margin: 0.6em 0.1em;
+  margin: 0.6em 0em;
+  padding: 0.3em 0.3em 0.3em 0.3em;
 }
 
-// table style
-table {
-  width: 100%;
-  border-collapse: collapse;
-  border-spacing: 2px;
-  line-height: 1;
-  thead {
-    border-top: $secondary-border;
-    border-bottom: $thin-border;
-    th {
-      padding: 10px 10px;
-      font-size: $font-bigger;
-    }
-  }
-  tbody {
-    td {  
-      padding: 8px 10px;
-    }
-    border-bottom: $thin-border;
-  }
+em {
+  color: $article-italic
 }
+
+
 code {
   font-family: $font-monospace;
+  cursor: $cursor-green-text;
 }
 article {
   a {
-    padding: 0 0.3em;
+    color: $article-link;
+    padding: 0;
   }
   a:hover {
-    font-weight: bold;
+    //font-weight: bold;
+    text-decoration: underline ;
   }
 }
 // markdown style reset: keyword
 article .language-plaintext {
-  font-size: 98%;
+  font-size: 100%;
   font-weight: bold;
-  color: $color-secondary;
-  -webkit-text-stroke: 0.5px $color-primary; // stroke text
+  color: $article-keyword;
+  // -webkit-text-stroke: 0.5px $color-primary; // stroke text
   // text-shadow: -0.4px -0.4px 0 rgb(233, 255, 135), 0.4px 0.4px 0 rgb(48, 253, 59),
     // 0.4px 0.4px 0 rgb(95, 99, 65);
 }
@@ -187,4 +251,40 @@ input[type="checkbox"]:checked::before {
   color: $color-primary;
   font-size: 15px;
   font-weight: bold;
+}
+
+// resize table when screen is thin
+
+@media screen and (max-width: 800px) and (min-width: 400px) {
+  thead {
+    th {
+      padding: 5px 5px !important;
+      font-size: $font-smaller !important;
+    }
+  }
+  tbody {
+    td {  
+      padding: 4px 5px !important;
+      font-size: $font-tiny !important;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  body {
+    line-height: 1.55;
+    font-size: $font-smaller;
+  }
+  thead {
+    th {
+      padding: 3px 1px !important;
+      font-size: $font-tiny !important;
+    }
+  }
+  tbody {
+    td {  
+      padding: 1px 1px !important;
+      font-size: $font-micro !important;
+    }
+  }
 }

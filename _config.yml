@@ -113,6 +113,9 @@ includes_dir        : src/_includes
 sass:
   sass_dir          : src/_sass
 
+# User defined paths
+img                 : /images      # When inserting images, could use "{{site.img}}/path/to/image.png" instead
+
 # 7. Plugins
 plugins:            # if "Jekyll::Errors::MissingDependencyException" -> Gem install jekyll-xxx
   - jekyll-feed

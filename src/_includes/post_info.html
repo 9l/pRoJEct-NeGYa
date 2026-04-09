@@ -21,7 +21,7 @@
   </span>
   {% endif %}
   <!-- Tags 测试条件：未设置：nil 设置，但为空：empty -->
-  {% unless page.tags == nil %} 
+  <!-- {% unless page.tags == "not set" %} 
   <span>
     <i class="fa fa-tag"></i>
     <span class="post_info_text">
@@ -29,7 +29,7 @@
     %} {% endfor %}
     </span>
   </span>
-  {% endunless %}
+  {% endunless %} -->
   <!-- Subclass -->
   {% if page.subclass %}
   <span>

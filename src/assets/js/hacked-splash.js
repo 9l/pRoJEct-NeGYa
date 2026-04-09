@@ -210,11 +210,11 @@
   ];
 
   const TIMING = {
-    total: 400, // 整个“脸部动画阶段”的总时长，单位毫秒；到这个时间后，脸层停止绘制并准备退场
-    dissolveStart: 160, // 从第 150ms 开始，脸部字符和背景字符进入“随机消失”阶段
-    fadeStart: 500, // 原本用于控制消失进度计算的后段时间点；通常应不小于 total，否则会出现时间逻辑不协调
-    faceFade: 200, // 脸层开始退场后，淡出到完全消失所需的时间，单位毫秒
-    flashTail: 1000, // 脸和黑背景消失后，FlashWord 还额外保留的时间，单位毫秒；之后再逐个慢慢消失
+    total: 200, // 整个“脸部动画阶段”的总时长，单位毫秒；到这个时间后，脸层停止绘制并准备退场
+    dissolveStart: 150, // 从第 150ms 开始，脸部字符和背景字符进入“随机消失”阶段
+    fadeStart: 300, // 原本用于控制消失进度计算的后段时间点；通常应不小于 total，否则会出现时间逻辑不协调
+    faceFade: 100, // 脸层开始退场后，淡出到完全消失所需的时间，单位毫秒
+    flashTail: 800, // 脸和黑背景消失后，FlashWord 还额外保留的时间，单位毫秒；之后再逐个慢慢消失
   };
 
   let dpr = 1;
@@ -258,7 +258,7 @@
 
   // FlashWord 同屏最大数量
   function getFlashLimit() {
-    return Math.min(2000, Math.max(600, Math.floor((width * height) / 2600)));
+    return Math.min(1000, Math.max(300, Math.floor((width * height) / 2600)));
   }
 
   function resize() {
@@ -466,19 +466,19 @@
 
     // 这里控制Flashword生成频率
     if (roll < 0.18) {
-      count = 10;
+      count = 5;
     } else if (roll < 0.45) {
-      count = 8;
-    } else if (roll < 0.78) {
-      count = 6;
-    } else {
       count = 4;
+    } else if (roll < 0.78) {
+      count = 3;
+    } else {
+      count = 2;
     }
     for (let i = 0; i < count; i += 1) {
       createFlashWord();
     }
 
-    window.setTimeout(flashAddLoop, rand(7, 16)); // 这里控制生成间隔，也相关频率
+    window.setTimeout(flashAddLoop, rand(5, 12)); // 这里控制生成间隔，也相关频率
   }
 
   function decayFlashWord(el) {

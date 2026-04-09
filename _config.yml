@@ -1,13 +1,18 @@
 # 1. Site Settings
-title               : pRoJEct-VeXEd
-owner               : "GMKZWWG"
 url                : "https://gmkzwwg.github.io"
 baseurl            : "/pRoJEct-VeXEd"
 permalink           : /:title/
-description         : "A hacker-style note-keeping website template."
 markdown            : kramdown
-statement           : "Designed by GMKZWWG, All Rights Reserved"
-bgtext              : "ABCFGHKLMNPQRSVWXYZabcdefghijklmnopqrstuvwxyz@#$%&*+-;/[]<>~" # texts randomly displayed in background
+
+# Site Texts
+title               : pRoJEct-VeXEd
+owner               : "GMKZWWG"
+description         : "A hacker-style note-keeping website template."
+statement           : "Designed by gmkzwwg, All Rights Reserved"
+archive_btn_text    : Archive
+home_btn_text       : Home
+# matrix_bg_text             : "01ABCDEFGHIJKLMNOPQRSTUVWXYZ#$%&*+-"
+
 
 # 2. Your Collections
 # You can specify the order shown in Archive window. 
@@ -67,22 +72,21 @@ defaults:
     scope:
       path          : ""  # an empty string here means all files in the project
     values:
-      layout              : "post"      # which layout to use by default
-      publish             : true        # whether to show by default      
+      layout              : "post"      # "post"/"parallel"/"compact"/"bilingual"/"print"
       btn_text            : true        # whether show button text by default
       collection_list     : true        # whether show archive button by default
       home_btn            : true        # whether show home by default
       maximize            : true        # whether show maximize button by default
       encrypted_text      : false       # whether use encrytion function by default
-      toc                 : "chart"        # whether show table of content by default
-      toc_level           : 3           # the toc depth by default
-      author              : "GMKZWWG" # author name by default
-      show_date           : true        # whether show date message by default
+      toc                 : "chart"     # toc right-up conner: "chart"/"compact"/"list"
+      toc_before_content  : false       # toc before content: "chart"/"compact"/"list"
+      toc_depth           : 4           # the toc depth by default
+      author              :             # author name by default
+      show_date           : false       # whether show date message by default
       category            :             # category by default
       post_list           : false       # whether show list of post by default      
-      comment             : true
-      footer              : true        # whether show footer by default
-      bilingual           : false       # whether use <blockquote> as bilingual section
+      comment             : false
+      footer              : false       # whether show footer by default
 
 
 # 5. Social Media Accounts
